@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futsal Schedule</title>
+    <title>Futsal Team Bookings</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,24 +15,39 @@
             color: #343a40;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #dee2e6;
+        fieldset {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
             padding: 10px;
-            text-align: center;
+            margin-bottom: 20px;
         }
 
-        th {
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .bk-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cu-booking-group {
+            width: 100%;
             background-color: #007bff;
             color: #fff;
+            padding: 5px;
+            margin: 10px 0;
+            border-radius: 5px;
         }
 
-        td {
+        .bk {
+            width: 48%;
+            margin: 1%;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
             background-color: #fff;
         }
     </style>
@@ -40,34 +55,32 @@
 
 <body>
 
-    <h1>Futsal Team Schedule</h1>
+    <fieldset>
+        <legend>Active bookings</legend>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Opponent</th>
-                <th>Location</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Example schedule, replace with your actual game details -->
-            <tr>
-                <td>2023-11-20</td>
-                <td>18:00</td>
-                <td>Team A</td>
-                <td>Sports Center</td>
-            </tr>
-            <tr>
-                <td>2023-11-25</td>
-                <td>19:30</td>
-                <td>Team B</td>
-                <td>Indoor Arena</td>
-            </tr>
-            <!-- Add more rows as needed -->
-        </tbody>
-    </table>
+        <div class="bk-list">
+            <div class="cu-booking-group">December 2023</div>
+            <div id="861088910" data-booking-flags="0-0-0-0-0-0-0-0-0" data-booking-start="2023-12-05 20:15:00"
+                data-booking-end="2023-12-05 22:15:00" data-space-type-ids="2" class="bk bk-approved">
+                <!-- ... (booking details) ... -->
+            </div>
+            <div id="1434272485" data-booking-flags="0-0-0-0-0-0-0-0-0" data-booking-start="2023-12-12 20:15:00"
+                data-booking-end="2023-12-12 22:15:00" data-space-type-ids="2" class="bk bk-approved">
+                <!-- ... (booking details) ... -->
+            </div>
+            <div id="1732198416" data-booking-flags="0-0-0-0-0-0-0-0-0" data-booking-start="2023-12-19 20:15:00"
+                data-booking-end="2023-12-19 22:15:00" data-space-type-ids="2" class="bk bk-approved">
+                <!-- ... (booking details) ... -->
+            </div>
+            <!-- ... (more bookings) ... -->
+            <div class="cu-booking-group">January 2024</div>
+            <div id="358006222" data-booking-flags="0-0-0-0-0-0-0-0-0" data-booking-start="2024-01-09 20:15:00"
+                data-booking-end="2024-01-09 22:15:00" data-space-type-ids="2" class="bk bk-approved">
+                <!-- ... (booking details) ... -->
+            </div>
+            <!-- ... (more bookings) ... -->
+        </div>
+    </fieldset>
 
 </body>
 
