@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Goncalves - Personal Website</title>
+    <title>Password Protected</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,57 +13,53 @@
             box-sizing: border-box;
             background-color: #f8f9fa;
             color: #343a40;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
-        header {
+        #password-input {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        #password-button {
+            padding: 10px;
+            border: none;
             background-color: #007bff;
             color: #fff;
-            padding: 1em;
-            text-align: center;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1em;
-            background-color: #007bff;
-            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Andrew Goncalves</h1>
-        <p>Welcome to My Personal Website</p>
-    </header>
+    <div>
+        <label for="password-input">Enter the password:</label>
+        <input type="password" id="password-input" />
+        <button id="password-button">Submit</button>
+    </div>
 
-    <section>
-        <h2>About Me</h2>
-        <p>
-            Hello! I'm Andrew, and this is my personal website.
-        </p>
-    </section>
+    <script>
+        const correctPassword = "andrewg"; // Replace with your desired password
 
-    <section>
-        <h2>Contact</h2>
-        <p>
-            Feel free to reach out to me at <a href="mailto:me@andrewgoncalves.com">me@andrewgoncalves.com</a>.
-        </p>
-    </section>
+        document.getElementById("password-button").addEventListener("click", function () {
+            const enteredPassword = document.getElementById("password-input").value;
 
-    <footer>
-        <p>&copy; 2023 Andrew Goncalves. All rights reserved.</p>
-    </footer>
+            if (enteredPassword === correctPassword) {
+                // Password is correct, redirect to your actual website
+                window.location.href = "futsal.html";
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        });
+    </script>
 
 </body>
 
