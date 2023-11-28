@@ -23,6 +23,7 @@
             border-collapse: collapse;
             margin-top: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-x: auto; /* Make the table horizontally scrollable on small screens */
         }
 
         th, td {
@@ -64,7 +65,20 @@
                 .registration-section a {
             color: #fff;
         }
-        
+        /* Media queries for smaller screens */
+        @media only screen and (max-width: 600px) {
+            table {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+
+            .registration-section {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 
