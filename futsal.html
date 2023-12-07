@@ -80,6 +80,27 @@
             }
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the current date in the 'YYYY-MM-DD' format
+            var currentDate = new Date().toISOString().split('T')[0];
+
+            // Get all date elements in the table
+            var dateElements = document.querySelectorAll('table tbody tr td:first-child');
+
+            // Iterate through the date elements
+            dateElements.forEach(function (dateElement) {
+                // Get the date value from the element
+                var eventDate = dateElement.textContent;
+
+                // Compare the dates
+                if (eventDate < currentDate) {
+                    // Hide the row if the date has passed
+                    dateElement.parentNode.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
