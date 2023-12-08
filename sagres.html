@@ -20,7 +20,7 @@
             margin-bottom: 8px;
         }
 
-        select, button {
+        input, button {
             width: 100%;
             padding: 8px;
             margin-bottom: 16px;
@@ -42,13 +42,13 @@
         <label for="gameDate">Game Date:</label>
         <input type="date" id="gameDate" name="gameDate" required>
 
-        <label for="playerName">Select Player:</label>
-        <select id="playerName" name="playerName" required>
-            <option value="Player1">Player 1</option>
-            <option value="Player2">Player 2</option>
-            <option value="Player3">Player 3</option>
+        <label>Player Attendance:</label>
+        <div id="playerList">
+            <label><input type="checkbox" name="player" value="Player1"> Player 1</label>
+            <label><input type="checkbox" name="player" value="Player2"> Player 2</label>
+            <label><input type="checkbox" name="player" value="Player3"> Player 3</label>
             <!-- Add more players as needed -->
-        </select>
+        </div>
 
         <button type="button" onclick="generateMessage()">Generate WhatsApp Message</button>
     </form>
@@ -58,11 +58,12 @@
     <script>
         function generateMessage() {
             const gameDate = document.getElementById('gameDate').value;
-            const playerName = document.getElementById('playerName').value;
+            const checkboxes = document.querySelectorAll('input[name="player"]:checked');
+            const selectedPlayers = Array.from(checkboxes).map(checkbox => checkbox.value);
 
             // You can add additional validation here if needed
 
-            const message = `📅 Game Date: ${gameDate}\n\n✅ Attendance Confirmed:\n${playerName}`;
+            const message = `📅 Game Date: ${gameDate}\n\n✅ Attendance Confirmed:\n${selectedPlayers.join('\n')}`;
 
             document.getElementById('whatsappMessage').value = message;
         }
