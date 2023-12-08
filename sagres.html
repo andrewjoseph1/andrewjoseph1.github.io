@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Attendance Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Manual Attendance Input</h2>
+
+    <form id="attendanceForm">
+        <label for="gameDate">Game Date:</label>
+        <input type="date" id="gameDate" name="gameDate" required>
+
+        <label for="attendanceList">Attendance List (comma-separated):</label>
+        <input type="text" id="attendanceList" name="attendanceList" required>
+
+        <button type="button" onclick="generateMessage()">Generate WhatsApp Message</button>
+    </form>
+
+    <textarea id="whatsappMessage" rows="5" readonly></textarea>
+
+    <script>
+        function generateMessage() {
+            const gameDate = document.getElementById('gameDate').value;
+            const attendanceList = document.getElementById('attendanceList').value;
+
+            // You can add additional validation here if needed
+
+            const message = `📅 Game Date: ${gameDate}\n\n✅ Attendance Confirmed:\n${attendanceList}`;
+
+            document.getElementById('whatsappMessage').value = message;
+        }
+    </script>
+
+</body>
+</html>
