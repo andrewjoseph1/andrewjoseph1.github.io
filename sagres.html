@@ -21,9 +21,20 @@
         }
 
         input, button {
-            width: 100%;
+            width: calc(100% - 16px); /* Adjusted width */
             padding: 8px;
             margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Improved styling for checkboxes and labels */
+        #playerList label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        #playerList input {
+            margin-right: 8px;
         }
 
         button {
