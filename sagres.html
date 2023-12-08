@@ -76,24 +76,7 @@
 
         <label>Player Attendance:</label>
         <div id="playerList">
-            <label><input type="checkbox" name="player" value="Andrew Goncalves">Andrew Goncalves</label>
-            <label><input type="checkbox" name="player" value="Bryan Carballo">Bryan Carballo</label>
-            <label><input type="checkbox" name="player" value="Carlos Oliveira">Carlos Oliveira</label>
-            <label><input type="checkbox" name="player" value="Daniel Pereira">Daniel Pereira</label>
-            <label><input type="checkbox" name="player" value="Daniel Galvao">Daniel Galvao</label>
-            <label><input type="checkbox" name="player" value="Kevin Amorim">Kevin Amorim</label>
-            <label><input type="checkbox" name="player" value="Gerald Richard">Gerald Richard</label>
-            <label><input type="checkbox" name="player" value="Jason Matos">Jason Matos</label>
-            <label><input type="checkbox" name="player" value="Mark Da Costa">Mark Da Costa</label>
-            <label><input type="checkbox" name="player" value="Gabriel Da Costa">Gabriel Da Costa</label>
-            <label><input type="checkbox" name="player" value="Gilson Calei">Gilson Calei</label>
-            <label><input type="checkbox" name="player" value="Loic 81904">Loic 81904</label>
-            <label><input type="checkbox" name="player" value="Fadil Dzananovic">Fadil Dzananovic</label>
-            <label><input type="checkbox" name="player" value="Stephen Marcos">Stephen Marcos</label>
-            <label><input type="checkbox" name="player" value="Stephen Smith">Stephen Smith</label>
-            <label><input type="checkbox" name="player" value="Sergio Verdasca">Sergio Verdasca</label>
-            <label><input type="checkbox" name="player" value="Jonathon Carvalho">Jonathon Carvalho</label>
-            <!-- Add more players as needed -->
+            <!-- Player names will be dynamically added here -->
         </div>
 
         <button type="button" onclick="generateMessage()">Generate WhatsApp Message</button>
@@ -103,19 +86,35 @@
     <textarea id="whatsappMessage" rows="5" readonly></textarea>
 
     <script>
+        // List of player names
+        const playerNames = [
+            "Andrew Goncalves", "Bryan Carballo", "Carlos Oliveira", "Daniel Pereira", 
+            "Daniel Galvao", "Kevin Amorim", "Gerald Richard", "Jason Matos", 
+            "Mark Da Costa", "Gabriel Da Costa", "Gilson Calei", "Loic 81904", 
+            "Fadil Dzananovic", "Stephen Marcos", "Stephen Smith", "Sergio Verdasca", "Jonathon Carvalho"
+        ];
+
+        // Sort player names alphabetically
+        const sortedPlayerNames = playerNames.sort();
+
+        // Populate player list dynamically
+        const playerListContainer = document.getElementById('playerList');
+        sortedPlayerNames.forEach(player => {
+            const label = document.createElement('label');
+            label.innerHTML = `<input type="checkbox" name="player" value="${player}"> ${player}`;
+            playerListContainer.appendChild(label);
+        });
+
         function generateMessage() {
             const gameDate = document.getElementById('gameDate').value;
             const gameTime = document.getElementById('gameTime').value;
             const checkboxes = Array.from(document.querySelectorAll('input[name="player"]'));
 
-            // Sort players alphabetically
-            const sortedPlayers = checkboxes.map(checkbox => checkbox.value).sort();
-
-            const confirmedPlayers = sortedPlayers
+            const confirmedPlayers = sortedPlayerNames
                 .filter(player => checkboxes.find(checkbox => checkbox.value === player && checkbox.checked))
                 .map(player => `✅ ${player}`);
 
-            const unconfirmedPlayers = sortedPlayers
+            const unconfirmedPlayers = sortedPlayerNames
                 .filter(player => !checkboxes.find(checkbox => checkbox.value === player || checkbox.checked))
                 .map(player => `❌ ${player}`);
 
