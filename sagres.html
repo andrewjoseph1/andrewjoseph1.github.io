@@ -120,7 +120,7 @@
                 .filter(player => !checkboxes.find(checkbox => checkbox.value === player || checkbox.checked))
                 .join('\n- ');
 
-            const message = `📅 Game Date: ${gameDate}\n⌚ Game Time: ${formatTime(gameTime)}\n\nConfirmed Players:\n- ${confirmedPlayers}\n\nUnconfirmed Players:\n- ${unconfirmedPlayers}`;
+            const message = `📅 Game Date: ${gameDate}\n⌚ Game Time: ${formatTime(gameTime)}\n\nConfirmed Players:\n- ${confirmedPlayers}\n\nUnconfirmed or not playing:\n- ${unconfirmedPlayers}`;
 
             document.getElementById('whatsappMessage').value = message;
         }
