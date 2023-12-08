@@ -20,7 +20,7 @@
             margin-bottom: 8px;
         }
 
-        input {
+        select, button {
             width: 100%;
             padding: 8px;
             margin-bottom: 16px;
@@ -29,7 +29,6 @@
         button {
             background-color: #4CAF50;
             color: white;
-            padding: 10px;
             border: none;
             cursor: pointer;
         }
@@ -43,8 +42,13 @@
         <label for="gameDate">Game Date:</label>
         <input type="date" id="gameDate" name="gameDate" required>
 
-        <label for="attendanceList">Attendance List (comma-separated):</label>
-        <input type="text" id="attendanceList" name="attendanceList" required>
+        <label for="playerName">Select Player:</label>
+        <select id="playerName" name="playerName" required>
+            <option value="Player1">Player 1</option>
+            <option value="Player2">Player 2</option>
+            <option value="Player3">Player 3</option>
+            <!-- Add more players as needed -->
+        </select>
 
         <button type="button" onclick="generateMessage()">Generate WhatsApp Message</button>
     </form>
@@ -54,11 +58,11 @@
     <script>
         function generateMessage() {
             const gameDate = document.getElementById('gameDate').value;
-            const attendanceList = document.getElementById('attendanceList').value;
+            const playerName = document.getElementById('playerName').value;
 
             // You can add additional validation here if needed
 
-            const message = `📅 Game Date: ${gameDate}\n\n✅ Attendance Confirmed:\n${attendanceList}`;
+            const message = `📅 Game Date: ${gameDate}\n\n✅ Attendance Confirmed:\n${playerName}`;
 
             document.getElementById('whatsappMessage').value = message;
         }
