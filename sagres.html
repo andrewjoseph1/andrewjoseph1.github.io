@@ -114,13 +114,13 @@
 
             const confirmedPlayers = sortedPlayerNames
                 .filter(player => checkboxes.find(checkbox => checkbox.value === player && checkbox.checked))
-                .join(', ');
+                .join('\n- ');
 
             const unconfirmedPlayers = sortedPlayerNames
                 .filter(player => !checkboxes.find(checkbox => checkbox.value === player || checkbox.checked))
-                .join(', ');
+                .join('\n- ');
 
-            const message = `📅 Game Date: ${gameDate}\n⌚ Game Time: ${formatTime(gameTime)}\n\nConfirmed Players: ${confirmedPlayers}\nUnconfirmed Players: ${unconfirmedPlayers}`;
+            const message = `📅 Game Date: ${gameDate}\n⌚ Game Time: ${formatTime(gameTime)}\n\nConfirmed Players:\n- ${confirmedPlayers}\n\nUnconfirmed Players:\n- ${unconfirmedPlayers}`;
 
             document.getElementById('whatsappMessage').value = message;
         }
