@@ -40,6 +40,13 @@
             width: auto;
         }
 
+        .copy-button {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
         button {
             background-color: #4CAF50;
             color: white;
@@ -75,6 +82,7 @@
         </div>
 
         <button type="button" onclick="generateMessage()">Generate WhatsApp Message</button>
+        <button class="copy-button" type="button" onclick="copyToClipboard()">Copy to Clipboard</button>
     </form>
 
     <textarea id="whatsappMessage" rows="5" readonly></textarea>
@@ -101,6 +109,13 @@
         function formatTime(time) {
             const options = { hour: 'numeric', minute: 'numeric', hour12: true };
             return new Date(`2023-01-01T${time}`).toLocaleTimeString('en-US', options);
+        }
+
+        function copyToClipboard() {
+            const whatsappMessage = document.getElementById('whatsappMessage');
+            whatsappMessage.select();
+            document.execCommand('copy');
+            alert('Message copied to clipboard!');
         }
     </script>
 
