@@ -1,66 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Protected</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AG Logo Main Page</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        body, html {
+            height: 100%;
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f8f9fa;
-            color: #343a40;
-            text-align: center;
             display: flex;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            flex-direction: column;
         }
 
-        #password-input {
-            padding: 10px;
-            margin-right: 10px;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
+        .logo-container {
+            text-align: center;
         }
 
-        #password-button {
-            padding: 10px;
-            border: none;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-            border-radius: 5px;
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #0073b1; /* LinkedIn blue */
+            margin: 0 10px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
-
 <body>
-
-    <div>
-        <label for="password-input">Enter the password:</label>
-        <input type="password" id="password-input" />
-        <button id="password-button">Submit</button>
+    <div class="logo-container">
+        <img src="aglogo.png" alt="AG Logo">
     </div>
 
-    <script>
-        const correctPassword = "futsal"; // Replace with your desired password
-
-        document.getElementById("password-button").addEventListener("click", function () {
-            const enteredPassword = document.getElementById("password-input").value;
-
-            if (enteredPassword === correctPassword) {
-                // Password is correct, redirect to your actual website
-                window.location.href = "futsal.html";
-            } else {
-                alert("Incorrect password. Please try again.");
-            }
-        });
-    </script>
-
+    <div class="contact-info">
+        <a href="www.linkedin.com/in/andrew-gonçalves" target="_blank">LinkedIn</a> | 
+        <a href="mailto:andrew@andrewgoncalves.com">andrew@andrewgoncalves.com</a>
+    </div>
 </body>
-
 </html>
