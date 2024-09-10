@@ -47,10 +47,10 @@
 /* Main section */
 main {
     display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center the content horizontally */
-    justify-content: center; /* Center the content vertically */
-    min-height: 100vh; /* Take full viewport height */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
@@ -59,9 +59,9 @@ main {
 /* Profile image container */
 .profile-pic-container {
     position: relative;
-    width: 200px;
+    width: 200px; /* Adjust the size of the image */
     height: 200px;
-    margin-bottom: 20px; /* Add space between the image and the name */
+    margin-bottom: 40px; /* Increase the space between the image and the text */
 }
 
 .profile-pic-container img {
@@ -69,6 +69,7 @@ main {
     height: auto;
     border-radius: 50%;
     box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Make sure the image stays in front */
 }
 
 /* Name and description text */
@@ -76,14 +77,16 @@ h1 {
     font-family: 'Raleway', sans-serif;
     font-size: 48px;
     font-weight: 700;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 20px; /* Add space between the name and the subtitle */
+    z-index: 0; /* Ensures the text doesn't overlap with the image */
 }
 
 .subtitle {
     font-size: 16px;
     color: #777;
-    margin-top: 10px; /* Add space between name and subtitle */
-    max-width: 800px; /* Control the width of the text block */
+    margin-top: 10px;
+    max-width: 800px;
     line-height: 1.5;
 }
 
@@ -91,7 +94,7 @@ h1 {
 .social-links {
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Space between subtitle and social links */
+    margin-top: 20px;
 }
 
 .social-links a {
@@ -100,11 +103,16 @@ h1 {
 }
 
 .social-links img {
-    width: 40px; /* Set consistent width for all social icons */
-    height: 40px; /* Set consistent height for all social icons */
-    object-fit: contain; /* Maintain aspect ratio without stretching */
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
+/* Prevent text overlap */
+h1, .subtitle {
+    z-index: 2; /* Ensure the text stays on top of the image */
+    position: relative;
+}
 
         /* Language buttons */
         .language-select {
