@@ -48,14 +48,16 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 30px 20px; /* Adjusted padding */
+            padding: 30px 20px;
+            box-sizing: border-box;
+            min-height: 100vh; /* Ensures main takes up the full height */
         }
 
         /* Profile Image Container */
         .profile-pic-container {
             width: 200px;
             height: 200px;
-            margin-bottom: 20px; /* Reduced margin-bottom */
+            margin-bottom: 40px; /* Controlled space between image and text */
         }
 
         .profile-pic-container img {
@@ -70,17 +72,17 @@
             font-family: 'Raleway', sans-serif;
             font-size: 48px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 20px; /* Increased space to prevent overlap */
         }
 
         .subtitle {
             font-size: 16px;
             color: #777;
-            margin-top: 10px;
+            margin-top: 20px;
             max-width: 800px;
             line-height: 1.5;
-            margin-bottom: 20px; /* Adjusted spacing */
-            padding: 0 20px; /* Added padding for better mobile view */
+            margin-bottom: 40px; /* Increased space below text */
+            padding: 0 20px; /* Added padding for mobile readability */
         }
 
         /* Social Icons */
