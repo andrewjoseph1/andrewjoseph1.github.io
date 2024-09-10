@@ -5,29 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrew Gonçalves - Home</title>
 
-    <!-- Google Fonts: Open Sans and Raleway -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
 
     <style>
-        /* Global Reset and Box Sizing */
+        /* Global Styles */
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body and HTML Styles */
         body, html {
+            margin: 0;
+            padding: 0;
             font-family: 'Open Sans', sans-serif;
             background-color: #f8f4ef;
             color: #333;
             overflow-x: hidden; /* Prevents horizontal scrolling */
         }
 
-        /* Header Styling */
+        /* Header styling */
         header {
             display: flex;
-            justify-content: center; /* Center the logo horizontally */
+            justify-content: center; /* Centered since there's no blog link */
             align-items: center;
             padding: 20px;
         }
@@ -42,20 +41,23 @@
             margin-right: 15px;
         }
 
-        /* Main Section */
+        /* Main section */
         main {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            /* Adjusted height calculation */
+            min-height: calc(100vh - 60px); /* Subtract header height */
             text-align: center;
-            padding: 30px 20px; /* Adjusted padding */
+            padding: 20px;
         }
 
-        /* Profile Image Container */
+        /* Profile image container */
         .profile-pic-container {
             width: 200px;
             height: 200px;
-            margin-bottom: 20px; /* Reduced margin-bottom */
+            margin-bottom: 20px;
         }
 
         .profile-pic-container img {
@@ -65,25 +67,26 @@
             box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.1);
         }
 
-        /* Name and Description Text */
+        /* Name and description text */
         h1 {
             font-family: 'Raleway', sans-serif;
             font-size: 48px;
             font-weight: 700;
+            margin: 0;
             margin-bottom: 10px;
         }
 
         .subtitle {
             font-size: 16px;
             color: #777;
+            margin: 0;
             margin-top: 10px;
             max-width: 800px;
             line-height: 1.5;
-            margin-bottom: 20px; /* Adjusted spacing */
-            padding: 0 20px; /* Added padding for better mobile view */
+            margin-bottom: 20px;
         }
 
-        /* Social Icons */
+        /* Social icons */
         .social-links {
             display: flex;
             justify-content: center;
@@ -101,23 +104,34 @@
             object-fit: contain;
         }
 
-        /* Responsive Design */
+        /* Responsive Styles */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 36px;
-            }
-
-            .subtitle {
-                font-size: 14px;
-            }
-
             header {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+            }
+
+            header .logo img {
+                width: 40px;
+                margin-bottom: 10px;
+            }
+
+            main {
                 padding: 15px;
             }
 
             .profile-pic-container {
                 width: 150px;
                 height: 150px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 14px;
             }
 
             .social-links img {
@@ -127,6 +141,23 @@
         }
 
         @media (max-width: 480px) {
+            header {
+                padding: 10px;
+            }
+
+            header .logo img {
+                width: 30px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            .profile-pic-container {
+                width: 120px;
+                height: 120px;
+            }
+
             h1 {
                 font-size: 28px;
             }
@@ -135,20 +166,15 @@
                 font-size: 12px;
             }
 
-            .profile-pic-container {
-                width: 120px;
-                height: 120px;
-            }
-
             .social-links img {
-                width: 25px;
-                height: 25px;
+                width: 24px;
+                height: 24px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header section -->
     <header>
         <div class="logo">
             <!-- Replace with your logo -->
@@ -156,7 +182,7 @@
         </div>
     </header>
 
-    <!-- Main Content Section -->
+    <!-- Main content section -->
     <main>
         <div class="profile-pic-container">
             <img src="/ag_photo.png" alt="Photo">
@@ -164,7 +190,7 @@
         <h1>Andrew Gonçalves</h1>
         <p class="subtitle">I'm a Customer Experience professional specialising in building and scaling Professional Services, Customer Support, and Customer Success organizations. Feel free to contact me below!</p>
 
-        <!-- Social Links -->
+        <!-- Social links -->
         <div class="social-links">
             <a href="https://www.linkedin.com/in/andrew-gon%C3%A7alves/" target="_blank">
                 <img src="/linkedin_logo.png" alt="LinkedIn">
