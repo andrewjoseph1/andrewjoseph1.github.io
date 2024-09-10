@@ -21,6 +21,7 @@
             font-family: 'Open Sans', sans-serif;
             background-color: #f8f4ef;
             color: #333;
+            height: 100%;
             overflow-x: hidden; /* Prevents horizontal scrolling */
         }
 
@@ -50,7 +51,7 @@
             text-align: center;
             padding: 30px 20px;
             box-sizing: border-box;
-            min-height: 100vh; /* Ensures main takes up the full height */
+            min-height: calc(100vh - 80px); /* Subtracts header height */
         }
 
         /* Profile Image Container */
@@ -71,7 +72,7 @@
             font-family: 'Raleway', sans-serif;
             font-size: 48px;
             font-weight: 700;
-            margin-top: 20px; /* Increased space between the image and the text */
+            margin-top: 20px;
             margin-bottom: 20px;
         }
 
@@ -81,7 +82,7 @@
             max-width: 800px;
             line-height: 1.5;
             margin-bottom: 40px;
-            padding: 0 20px; /* Added padding for mobile readability */
+            padding: 0 20px;
         }
 
         /* Social Icons */
