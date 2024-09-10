@@ -44,61 +44,67 @@
             font-weight: 700;
         }
 
-        /* Main section */
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 100px); /* Full height minus header and footer */
-            flex-direction: column; /* Stack image and text vertically */
-            text-align: center;
-            padding: 20px; /* Add some padding for spacing */
-        }
+/* Main section */
+main {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    min-height: 100vh; /* Take full viewport height */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-        .profile-pic-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin-bottom: 20px; /* Add space between the image and the text */
-        }
+/* Profile image container */
+.profile-pic-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px; /* Add space between the image and the name */
+}
 
-        .profile-pic-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.1);
-        }
+.profile-pic-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.1);
+}
 
-        h1 {
-            font-family: 'Raleway', sans-serif;
-            font-size: 48px;
-            font-weight: 700;
-            margin: 0;
-            padding-top: 20px; /* Add some spacing above the title */
-        }
+/* Name and description text */
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+}
 
-        .subtitle {
-            font-size: 16px;
-            color: #777;
-        }
+.subtitle {
+    font-size: 16px;
+    color: #777;
+    margin-top: 10px; /* Add space between name and subtitle */
+    max-width: 800px; /* Control the width of the text block */
+    line-height: 1.5;
+}
 
+/* Social icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Space between subtitle and social links */
+}
 
-        /* Social media and contact icons */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+}
 
-        .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-        }
+.social-links img {
+    width: 40px; /* Set consistent width for all social icons */
+    height: 40px; /* Set consistent height for all social icons */
+    object-fit: contain; /* Maintain aspect ratio without stretching */
+}
 
-        .social-links img {
-            width: 24px;
-            height: 24px;
-        }
 
         /* Language buttons */
         .language-select {
