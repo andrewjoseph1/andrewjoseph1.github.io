@@ -4,64 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Andrew Gonçalves</title>
+    <title>Your Name - Home</title>
 
     <!-- Google Fonts: Open Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
 
     <style>
         body, html {
-            height: 100%;
             margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f4ef;
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            width: 50px; /* Placeholder for logo image */
+            margin-right: 15px;
+        }
+
+        header a.blog-link {
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 700;
+        }
+
+        /* Main section */
+        main {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f0f0f0;
+            height: calc(100vh - 100px); /* Full height minus header and footer */
             flex-direction: column;
-        }
-
-        .logo-container {
             text-align: center;
-            width: 100%; /* Ensure it scales with the screen width */
-            padding: 20px;
         }
 
-        .logo-container img {
-            max-width: 100%; /* Image scales based on the container */
-            height: auto; /* Maintains aspect ratio */
+        .profile-pic-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic-container img {
             width: 100%;
-            max-height: 500px; /* Optional: Limit the image height */
+            height: auto;
+            border-radius: 50%;
+            box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-info {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #000000;
+        h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
         }
 
-        .contact-info a {
+        .subtitle {
+            font-size: 16px;
+            color: #777;
+        }
+
+        /* Social media and contact icons */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-links a {
             margin: 0 10px;
             text-decoration: none;
         }
 
-        .contact-info img {
-            width: 32px;
-            height: 32px;
-            vertical-align: middle;
+        .social-links img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Language buttons */
+        .language-select {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-select button {
+            background-color: #ccc;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .language-select button.active {
+            background-color: #9de18a;
+        }
+
+        .language-select button:hover {
+            background-color: #b8e8a1;
         }
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <img src="/aglogo.png" alt="AG Logo">
-    </div>
+    <!-- Header section -->
+    <header>
+        <div class="logo">
+            <!-- Replace with your logo -->
+            <img src="path-to-logo/logo.png" alt="Logo">
+            <span>Your Name</span>
+        </div>
+        <a href="#" class="blog-link">→ BLOG</a>
+    </header>
 
-    <div class="contact-info">
-        <a href="https://www.linkedin.com/in/andrew-gonçalves" target="_blank">
-            <img src="/linkedin-logo.png" alt="LinkedIn">
-        </a>
-        <a href="mailto:andrew@andrewgoncalves.com">andrew@andrewgoncalves.com</a>
+    <!-- Main content section -->
+    <main>
+        <div class="profile-pic-container">
+            <img src="path-to-profile/profile.png" alt="Your Name">
+        </div>
+        <h1>Your Name</h1>
+        <p class="subtitle">I'm a [Your Profession] specialising in [Skills or Expertise].</p>
+
+        <!-- Social links -->
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/andrew-gon%C3%A7alves/" target="_blank">
+                <img src="/linkedin-logo.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/yourprofile" target="_blank">
+                <img src="path-to-github-logo/github-logo.png" alt="GitHub">
+            </a>
+            <a href="mailto:andrew@andrewgoncalves.com">
+                <img src="path-to-email-icon/email-icon.png" alt="Email">
+            </a>
+        </div>
+    </main>
+
+    <!-- Language selection buttons -->
+    <div class="language-select">
+        <button class="active">EN</button>
+        <button>FR</button>
     </div>
 </body>
 </html>
