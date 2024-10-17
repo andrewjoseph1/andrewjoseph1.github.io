@@ -19,11 +19,10 @@
         }
 
         .location-info {
-            margin-bottom: 20px;
-            background-color: #3498db;
+            margin-top: 10px;
             padding: 15px;
-            border-radius: 8px;
-            color: #fff;
+            background-color: #ecf0f1;
+            border-left: 4px solid #3498db;
         }
 
         table {
@@ -56,7 +55,7 @@
         tbody tr:hover {
             background-color: #d4e6f1;
         }
-
+        
         .registration-section {
             margin-top: 30px;
             padding: 20px;
@@ -91,8 +90,9 @@
         document.addEventListener('DOMContentLoaded', function () {
             var currentDate = new Date().toISOString().split('T')[0];
             var dateElements = document.querySelectorAll('table tbody tr td:first-child');
+
             dateElements.forEach(function (dateElement) {
-                var eventDate = dateElement.textContent;
+                var eventDate = dateElement.getAttribute('data-date');
                 if (eventDate < currentDate) {
                     dateElement.parentNode.style.display = 'none';
                 }
@@ -100,20 +100,20 @@
         });
     </script>
 </head>
+
 <body>
 
     <h1>Futsal Schedule</h1>
-
     <div class="location-info">
-        <p><strong>Location:</strong> Rockcliffe Park Public School Room 155 - Gym w/ Stage</p>
-        <p><strong>Address:</strong> <a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank" style="color: #fff;">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></p>
+        <strong>Location:</strong> Rockcliffe Park Public School Room 155 - Gym w/ Stage<br>
+        <strong>Address:</strong> <a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a>
     </div>
 
     <div class="registration-section">
         <h2>How to Register</h2>
-        <p>To register, send 60$ to <a href="mailto:andrewjoseph1@gmail.com">andrewjoseph1@gmail.com</a> and you'll be added to the list.</p>
+        <p>To register, send 50$ to <a href="mailto:andrewjoseph1@gmail.com">andrewjoseph1@gmail.com</a> and you'll be added to the list.</p>
     </div>
-
+    
     <table>
         <thead>
             <tr>
@@ -122,27 +122,86 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Updated Futsal Schedule -->
-            <tr><td>2024-10-29</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2024-11-05</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2024-11-12</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2024-11-19</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2024-11-26</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2024-12-03</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2024-12-10</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2024-12-17</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2025-01-07</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2025-01-14</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2025-01-21</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2025-01-28</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2025-02-04</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2025-02-11</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2025-02-18</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2025-02-25</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2025-03-04</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2025-03-18</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2025-03-25</td><td>8:15pm - 10:15pm</td></tr>
-            <tr><td>2025-04-01</td><td>8:15pm - 10:15pm</td></tr>
+            <tr>
+                <td data-date="2024-10-29">Tuesday, October 29, 2024</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2024-11-05">Tuesday, November 5, 2024</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2024-11-12">Tuesday, November 12, 2024</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2024-11-19">Tuesday, November 19, 2024</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2024-11-26">Tuesday, November 26, 2024</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2024-12-03">Tuesday, December 3, 2024</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2024-12-10">Tuesday, December 10, 2024</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2024-12-17">Tuesday, December 17, 2024</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2025-01-07">Tuesday, January 7, 2025</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2025-01-14">Tuesday, January 14, 2025</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2025-01-21">Tuesday, January 21, 2025</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2025-01-28">Tuesday, January 28, 2025</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2025-02-04">Tuesday, February 4, 2025</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2025-02-11">Tuesday, February 11, 2025</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2025-02-18">Tuesday, February 18, 2025</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2025-02-25">Tuesday, February 25, 2025</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2025-03-04">Tuesday, March 4, 2025</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2025-03-18">Tuesday, March 18, 2025</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2025-03-25">Tuesday, March 25, 2025</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
+            <tr>
+                <td data-date="2025-04-01">Tuesday, April 1, 2025</td>
+                <td>8:15pm - 10:15pm</td>
+            </tr>
         </tbody>
     </table>
 
