@@ -18,12 +18,20 @@
             color: #3498db;
         }
 
+        .location-info {
+            margin-bottom: 20px;
+            background-color: #3498db;
+            padding: 15px;
+            border-radius: 8px;
+            color: #fff;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow-x: auto; /* Make the table horizontally scrollable on small screens */
+            overflow-x: auto;
         }
 
         th, td {
@@ -48,8 +56,7 @@
         tbody tr:hover {
             background-color: #d4e6f1;
         }
-        
-        /* New style for the registration section */
+
         .registration-section {
             margin-top: 30px;
             padding: 20px;
@@ -62,10 +69,10 @@
             margin-bottom: 10px;
         }
 
-                .registration-section a {
+        .registration-section a {
             color: #fff;
         }
-        /* Media queries for smaller screens */
+
         @media only screen and (max-width: 600px) {
             table {
                 font-size: 14px;
@@ -82,160 +89,62 @@
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Get the current date in the 'YYYY-MM-DD' format
             var currentDate = new Date().toISOString().split('T')[0];
-
-            // Get all date elements in the table
             var dateElements = document.querySelectorAll('table tbody tr td:first-child');
-
-            // Iterate through the date elements
             dateElements.forEach(function (dateElement) {
-                // Get the date value from the element
                 var eventDate = dateElement.textContent;
-
-                // Compare the dates
                 if (eventDate < currentDate) {
-                    // Hide the row if the date has passed
                     dateElement.parentNode.style.display = 'none';
                 }
             });
         });
     </script>
 </head>
-
 <body>
 
     <h1>Futsal Schedule</h1>
-    
-    <!-- New registration section -->
+
+    <div class="location-info">
+        <p><strong>Location:</strong> Rockcliffe Park Public School Room 155 - Gym w/ Stage</p>
+        <p><strong>Address:</strong> <a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank" style="color: #fff;">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></p>
+    </div>
+
     <div class="registration-section">
         <h2>How to Register</h2>
-        <p>To register, send 50$ to <a href="mailto:andrewjoseph1@gmail.com">andrewjoseph1@gmail.com</a> and you'll be added to the list.</p>
+        <p>To register, send 60$ to <a href="mailto:andrewjoseph1@gmail.com">andrewjoseph1@gmail.com</a> and you'll be added to the list.</p>
     </div>
-    
+
     <table>
         <thead>
             <tr>
                 <th>Date</th>
                 <th>Time</th>
-                <th>Location</th>
-                <th>Address</th>
             </tr>
         </thead>
         <tbody>
-            <!-- Futsal Schedule -->
-            <tr>
-                <td>2023-12-05</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2023-12-12</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2023-12-19</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-01-09</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-01-16</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-01-23</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-01-30</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-02-06</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-02-13</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-02-20</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-02-27</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-03-05</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-03-19</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-03-26</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-04-02</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-04-09</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-04-16</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <tr>
-                <td>2024-04-23</td>
-                <td>8:15pm - 10:15pm</td>
-                <td>Rockcliffe Park Public School Room 155 - Gym w/ Stage</td>
-                <td><a href="https://maps.app.goo.gl/iPzQKb334G8ibABh9" target="_blank">350 Buena Vista Rd, Rockcliffe Park, ON K1M 1C1</a></td>
-            </tr>
-            <!-- Add more rows as needed -->
+            <!-- Updated Futsal Schedule -->
+            <tr><td>2024-10-29</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2024-11-05</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2024-11-12</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2024-11-19</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2024-11-26</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2024-12-03</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2024-12-10</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2024-12-17</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2025-01-07</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2025-01-14</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2025-01-21</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2025-01-28</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2025-02-04</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2025-02-11</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2025-02-18</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2025-02-25</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2025-03-04</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2025-03-18</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2025-03-25</td><td>8:15pm - 10:15pm</td></tr>
+            <tr><td>2025-04-01</td><td>8:15pm - 10:15pm</td></tr>
         </tbody>
     </table>
 
 </body>
-
 </html>
