@@ -1,174 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Gonçalves - Home</title>
-
-    <!-- Google Fonts: Open Sans and Raleway -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
-
-    <style>
-        /* Global Reset and Box Sizing */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body and HTML Styles */
-        body, html {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f8f4ef;
-            color: #333;
-            height: 100%;
-            overflow-x: hidden; /* Prevents horizontal scrolling */
-        }
-
-        /* Header Styling */
-        header {
-            display: flex;
-            justify-content: center; /* Center the logo horizontally */
-            align-items: center;
-            padding: 20px;
-        }
-
-        header .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        header .logo img {
-            width: 50px;
-            margin-right: 15px;
-        }
-
-        /* Main Section */
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 30px 20px;
-            box-sizing: border-box;
-            min-height: calc(100vh - 80px); /* Subtracts header height */
-        }
-
-        /* Profile Image Container */
-        .profile-pic-container {
-            width: 200px;
-            margin-bottom: 20px; /* Ensures space between image and text */
-        }
-
-        .profile-pic-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Name and Description Text */
-        h1 {
-            font-family: 'Raleway', sans-serif;
-            font-size: 48px;
-            font-weight: 700;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .subtitle {
-            font-size: 16px;
-            color: #777;
-            max-width: 800px;
-            line-height: 1.5;
-            margin-bottom: 40px;
-            padding: 0 20px;
-        }
-
-        /* Social Icons */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        .social-links img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 36px;
-            }
-
-            .subtitle {
-                font-size: 14px;
-            }
-
-            .profile-pic-container {
-                width: 150px;
-            }
-
-            .social-links img {
-                width: 30px;
-                height: 30px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 28px;
-            }
-
-            .subtitle {
-                font-size: 12px;
-            }
-
-            .profile-pic-container {
-                width: 120px;
-            }
-
-            .social-links img {
-                width: 25px;
-                height: 25px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrew Gonçalves</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #ffffff;
+      padding: 80px 20px 40px;
+      text-align: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #666;
+      margin-top: 10px;
+    }
+    .about {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .contact {
+      text-align: center;
+      margin: 50px 0;
+    }
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <!-- Replace with your logo -->
-            <img src="/ag_logo_transparent.png" alt="Logo">
-        </div>
-    </header>
 
-    <!-- Main Content Section -->
-    <main>
-        <div class="profile-pic-container">
-            <img src="/ag_photo.png" alt="Photo">
-        </div>
-        <h1>Andrew Gonçalves</h1>
-        <p class="subtitle">I'm a Customer Experience professional specialising in building and scaling Professional Services, Customer Support, and Customer Success organizations. Feel free to contact me below!</p>
+  <header>
+    <h1>Andrew Gonçalves</h1>
+    <p>Building better customer experiences, one conversation at a time.</p>
+  </header>
 
-        <!-- Social Links -->
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/andrew-jgoncalves/" target="_blank">
-                <img src="/linkedin_logo.png" alt="LinkedIn">
-            </a>
-            <a href="mailto:andrew@andrewgoncalves.com">
-                <img src="/email2.png" alt="Email">
-            </a>
-        </div>
-    </main>
+  <section class="about">
+    <p>I'm a CX leader who’s spent the last decade helping SaaS companies scale their customer experience. From building teams and processes to building customer journeys and engagement programs, I’m all about creating moments that make customers stick around (and tell their friends).</p>
+    <p>Right now I’m focused on simplifying systems, driving real customer outcomes, and experimenting with AI to make CX better, not buzzwordy.</p>
+  </section>
+
+  <section class="contact">
+    <a href="mailto:andrew@andrewgoncalves.com">Email Me</a>
+    <a href="https://www.linkedin.com/in/andrew-jgoncalves/" target="_blank">LinkedIn</a>
+  </section>
+
+  <footer>
+    © 2025 Andrew Gonçalves
+  </footer>
+
 </body>
 </html>
