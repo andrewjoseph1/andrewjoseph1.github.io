@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andrew Gonçalves</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -12,67 +12,117 @@
       background: #f9f9f9;
       color: #333;
     }
-    header {
-      background: #ffffff;
-      padding: 80px 20px 40px;
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .header {
       text-align: center;
-      border-bottom: 1px solid #e0e0e0;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+    .header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
     }
-    header p {
-      font-size: 1.2rem;
+    .header h1 {
+      margin: 20px 0 10px;
+      font-size: 2rem;
+    }
+    .header p {
       color: #666;
-      margin-top: 10px;
+      font-size: 1.1rem;
     }
     .about {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 40px 0;
       font-size: 1.05rem;
       line-height: 1.6;
     }
+    .icons {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .icons div {
+      flex: 1;
+    }
+    .icons img {
+      width: 40px;
+      margin-bottom: 10px;
+    }
+    .quote {
+      font-style: italic;
+      text-align: center;
+      margin: 40px 0;
+      font-size: 1.2rem;
+      color: #444;
+    }
     .contact {
       text-align: center;
-      margin: 50px 0;
+      margin: 30px 0;
     }
     .contact a {
-      display: inline-block;
-      margin: 10px;
+      margin: 0 10px;
       text-decoration: none;
       color: #0066cc;
       font-weight: 600;
     }
     footer {
       text-align: center;
-      font-size: 0.9rem;
       color: #aaa;
-      margin-bottom: 20px;
+      font-size: 0.9rem;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <div class="header">
+      <img src="https://via.placeholder.com/120" alt="Andrew Gonçalves">
+      <h1>Andrew Gonçalves</h1>
+      <p>Creating customer experiences people actually enjoy</p>
+    </div>
 
-  <header>
-    <h1>Andrew Gonçalves</h1>
-    <p>Building better customer experiences, one conversation at a time.</p>
-  </header>
+    <div class="about">
+      <p>I’m a CX leader who's spent the last decade helping SaaS companies scale their customer experiences. I’m all about creating systems that drive retention, enable growth, and keep customers coming back—not because they have to, but because they want to.</p>
+    </div>
 
-  <section class="about">
-    <p>I'm a CX leader who’s spent the last decade helping SaaS companies scale their customer experience. From building teams and processes to building customer journeys and engagement programs, I’m all about creating moments that make customers stick around (and tell their friends).</p>
-    <p>Right now I’m focused on simplifying systems, driving real customer outcomes, and experimenting with AI to make CX better, not buzzwordy.</p>
-  </section>
+    <div class="icons">
+      <div>
+        <img src="https://img.icons8.com/ios-filled/50/000000/strategy-board.png" alt="Strategy">
+        <div>Strategy</div>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/ios-filled/50/000000/combo-chart.png" alt="Growth">
+        <div>Growth</div>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/ios-filled/50/000000/brain.png" alt="Insights">
+        <div>Insights</div>
+      </div>
+      <div>
+        <img src="https://img.icons8.com/ios-filled/50/000000/handshake.png" alt="Collaboration">
+        <div>Collaboration</div>
+      </div>
+    </div>
 
-  <section class="contact">
-    <a href="mailto:andrew@andrewgoncalves.com">Email Me</a>
-    <a href="https://www.linkedin.com/in/andrew-jgoncalves/" target="_blank">LinkedIn</a>
-  </section>
+    <div class="quote">
+      “I treat CX like a product. Design it. Test it. Scale what works.”
+    </div>
 
-  <footer>
-    © 2025 Andrew Gonçalves
-  </footer>
+    <div class="contact">
+      <a href="mailto:andrew@andrewgoncalves.com">Email Me</a>
+      <a href="https://www.linkedin.com/in/andrew-jgoncalves/" target="_blank">LinkedIn</a>
+    </div>
 
+    <footer>
+      &copy; 2025 Andrew Gonçalves
+    </footer>
+  </div>
 </body>
 </html>
