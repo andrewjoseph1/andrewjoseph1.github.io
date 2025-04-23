@@ -6,6 +6,12 @@
   <title>Andrew Gonçalves</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --accent: #0066cc;
+    }
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -13,27 +19,28 @@
       color: #333;
     }
     .container {
-      max-width: 800px;
+      max-width: 700px;
       margin: 0 auto;
-      padding: 40px 20px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-    .header {
+      padding: 60px 20px;
       text-align: center;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
     }
-    .header img {
-      width: 120px;
-      height: 120px;
+    .avatar {
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
+      margin-bottom: 20px;
     }
-    .header h1 {
-      margin: 20px 0 10px;
+    h1 {
+      margin: 0;
       font-size: 2rem;
+      font-weight: 600;
     }
-    .header p {
+    .tagline {
+      margin-top: 8px;
       color: #666;
       font-size: 1.1rem;
     }
@@ -41,73 +48,72 @@
       margin: 40px 0;
       font-size: 1.05rem;
       line-height: 1.6;
+      color: #444;
     }
     .icons {
       display: flex;
-      justify-content: space-around;
-      text-align: center;
+      justify-content: space-between;
       margin: 40px 0;
+      gap: 10px;
     }
-    .icons div {
+    .icon-block {
       flex: 1;
     }
-    .icons img {
-      width: 40px;
-      margin-bottom: 10px;
+    .icon-block img {
+      height: 36px;
+      margin-bottom: 8px;
+    }
+    .icon-block span {
+      display: block;
+      font-weight: 600;
+      color: #333;
     }
     .quote {
       font-style: italic;
-      text-align: center;
-      margin: 40px 0;
       font-size: 1.2rem;
-      color: #444;
-    }
-    .contact {
-      text-align: center;
-      margin: 30px 0;
+      color: #333;
+      margin: 40px 0;
     }
     .contact a {
-      margin: 0 10px;
+      display: inline-block;
+      margin: 10px 15px;
       text-decoration: none;
-      color: #0066cc;
+      color: var(--accent);
       font-weight: 600;
     }
     footer {
-      text-align: center;
-      color: #aaa;
+      margin-top: 50px;
       font-size: 0.9rem;
-      margin-top: 40px;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <img src="https://via.placeholder.com/120" alt="Andrew Gonçalves">
-      <h1>Andrew Gonçalves</h1>
-      <p>Creating customer experiences people actually enjoy</p>
-    </div>
+    <img class="avatar" src="https://via.placeholder.com/140" alt="Andrew Gonçalves">
+    <h1>Andrew Gonçalves</h1>
+    <div class="tagline">Creating customer experiences people actually enjoy</div>
 
     <div class="about">
-      <p>I’m a CX leader who's spent the last decade helping SaaS companies scale their customer experiences. I’m all about creating systems that drive retention, enable growth, and keep customers coming back—not because they have to, but because they want to.</p>
+      I’m a CX leader who's spent the last decade helping SaaS companies scale their customer experiences. I’m all about creating systems that drive retention, enable growth, and keep customers coming back—not because they have to, but because they want to.
     </div>
 
     <div class="icons">
-      <div>
+      <div class="icon-block">
         <img src="https://img.icons8.com/ios-filled/50/000000/strategy-board.png" alt="Strategy">
-        <div>Strategy</div>
+        <span>Strategy</span>
       </div>
-      <div>
+      <div class="icon-block">
         <img src="https://img.icons8.com/ios-filled/50/000000/combo-chart.png" alt="Growth">
-        <div>Growth</div>
+        <span>Growth</span>
       </div>
-      <div>
+      <div class="icon-block">
         <img src="https://img.icons8.com/ios-filled/50/000000/brain.png" alt="Insights">
-        <div>Insights</div>
+        <span>Insights</span>
       </div>
-      <div>
+      <div class="icon-block">
         <img src="https://img.icons8.com/ios-filled/50/000000/handshake.png" alt="Collaboration">
-        <div>Collaboration</div>
+        <span>Collaboration</span>
       </div>
     </div>
 
@@ -116,12 +122,13 @@
     </div>
 
     <div class="contact">
-      <a href="mailto:andrew@andrewgoncalves.com">Email Me</a>
-      <a href="https://www.linkedin.com/in/andrew-jgoncalves/" target="_blank">LinkedIn</a>
+      <a href="mailto:andrew@example.com">Email Me</a>
+      <a href="https://www.linkedin.com/in/andrew-goncalves/" target="_blank">LinkedIn</a>
+      <a href="https://calendly.com/andrew-goncalves" target="_blank">Book a Call</a>
     </div>
 
     <footer>
-      &copy; 2025 Andrew Gonçalves
+      © 2025 Andrew Gonçalves
     </footer>
   </div>
 </body>
