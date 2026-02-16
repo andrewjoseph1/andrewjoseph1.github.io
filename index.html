@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Gonçalves</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Overpass:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #666666;
+            --accent: #8b7355;
+            --background: #fafaf8;
+            --card-bg: #ffffff;
+            --border: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Overpass', sans-serif;
+            background: var(--background);
+            color: var(--primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated background element */
+        .bg-gradient {
+            position: fixed;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 120%;
+            background: radial-gradient(circle at center, rgba(139, 115, 85, 0.03) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(2deg); }
+            66% { transform: translate(-20px, 20px) rotate(-2deg); }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        header {
+            padding: 6rem 0 4rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.2s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .profile-image {
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .profile-image img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        .profile-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .profile-content {
+            flex: 1;
+            padding-top: 1rem;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--secondary);
+            font-weight: 300;
+            letter-spacing: 0.01em;
+            max-width: 500px;
+        }
+
+        /* About Section */
+        .about {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.4s;
+            margin-bottom: 5rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--secondary);
+            font-weight: 300;
+            max-width: 650px;
+        }
+
+        /* Expertise Section */
+        .expertise {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.6s;
+            margin-bottom: 5rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .expertise-item {
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        .expertise-item:hover {
+            transform: translateY(-4px);
+            border-top-color: var(--accent);
+        }
+
+        .expertise-item h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .expertise-item p {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.8s;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            font-size: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            position: relative;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+            padding-bottom: 2px;
+        }
+
+        .contact-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.4s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        .contact-link:hover::after {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 0 3rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 1s;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: 300;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            header {
+                padding: 4rem 0 3rem;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-content {
+                padding-top: 0;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                max-width: 100%;
+            }
+
+            .about p {
+                max-width: 100%;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .profile-image img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection color */
+        ::selection {
+            background: var(--accent);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="andrew_site_avatar_high_res.png" alt="Andrew Gonçalves">
+                </div>
+                <div class="profile-content">
+                    <h1>Andrew Gonçalves</h1>
+                    <p class="tagline">I help enterprise SaaS companies build customer teams that actually work</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="about">
+            <p>I'm a VP of Customer Experience who's spent the last decade building CS teams from scratch at enterprise SaaS companies. I focus on the practical stuff—setting up frameworks that actually scale, creating processes people will use, and building teams that customers genuinely want to work with. Less corporate speak, more getting things done.</p>
+        </section>
+
+        <section class="expertise">
+            <div class="section-label">Areas of Focus</div>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <h3>Strategy</h3>
+                    <p>Building CS orgs that scale without falling apart</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Growth</h3>
+                    <p>Keeping customers happy so they stick around and spend more</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Insights</h3>
+                    <p>Using data to fix problems before they become problems</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Leadership</h3>
+                    <p>Hiring great people and getting teams to work well together</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="section-label">Get in Touch</div>
+            <div class="contact-links">
+                <a href="mailto:andrew@andrewgoncalves.com" class="contact-link">Email Me</a>
+                <a href="https://www.linkedin.com/in/andrew-jgoncalves/" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Andrew Gonçalves</p>
+        </footer>
+    </div>
+</body>
+</html>
